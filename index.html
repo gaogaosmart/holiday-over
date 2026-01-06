@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>放假倒计时</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+  <div class="canvas-container">
+    <canvas id="trails-canvas"></canvas>
+    <canvas id="main-canvas"></canvas>
+  </div>
+
+  <div class="hud">
+    <div class="hud__title">放假倒计时</div>
+    <div class="hud__time" id="countdownText">--</div>
+    <div class="hud__hint">点击屏幕可手动发射</div>
+  </div>
+
+  <button class="btn btn--primary open-menu-btn" type="button">设置</button>
+
+  <div class="menu hide" id="menu">
+    <div class="menu__inner">
+      <div class="menu__header">
+        <div>设置</div>
+        <button class="btn btn--ghost close-menu-btn" type="button">关闭</button>
+      </div>
+
+      <div class="form-option">
+        <label>目标时间（本地时间）</label>
+        <input class="countdown-target" type="datetime-local" step="1" />
+      </div>
+
+      <div class="form-option form-option--row">
+        <label>自动发射</label>
+        <input class="auto-launch" type="checkbox" />
+      </div>
+
+      <div class="form-option form-option--row">
+        <label>保留轨迹（长曝光）</label>
+        <input class="long-exposure" type="checkbox" />
+      </div>
+
+      <div class="form-option form-option--row">
+        <label>文字烟花</label>
+        <input class="word-shell" type="checkbox" />
+      </div>
+
+      <div class="form-option">
+        <label>烟花文字（每行一个）</label>
+        <textarea class="firework-text" rows="5"></textarea>
+        <div class="note">开启文字烟花后，将随机显示这些文字</div>
+      </div>
+
+      <div class="form-option">
+        <button class="btn btn--primary launch-now-btn" type="button">立刻放一发</button>
+      </div>
+
+      <div class="footer">
+        <div>默认目标：2026-01-23 00:00:00</div>
+        <div class="small">静态页面，可直接 GitHub Pages 部署</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="assets/js/mymath.js"></script>
+  <script src="assets/js/stage.js"></script>
+  <script src="assets/js/fireworks.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
